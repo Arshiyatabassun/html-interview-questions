@@ -1,4 +1,4 @@
-Hoisting:
+// Hoisting:
 //  2 types :1-Function Hoisting
 //            mFunc()
 //            function mFunc(){
