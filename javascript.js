@@ -1,11 +1,26 @@
 Hoisting:
 //  2 types :1-Function Hoisting
-           mFunc()
-           function mFunc(){
-            var a = 10;
-            console.log(a)
-           }
-//   2-Variable Hoisting:
-      x=10;
-      console.log(x)
-      var x; 
+//            mFunc()
+//            function mFunc(){
+//             var a = 10;
+//             console.log(a)
+//            }
+// //   2-Variable Hoisting:
+//       x=10;
+//       console.log(x)
+//       var x; 
+
+    //   var let n const:
+//  console.log("adsdffmng ")
+//  console.log(b)
+    //   let a= 10;
+    //   var a =100;
+    //   var a =10000
+//     let a;
+// const a;
+// a=1000;
+
+    // a=100;
+    // const a =10;
+    // a=100;
+    // console.log(a)
