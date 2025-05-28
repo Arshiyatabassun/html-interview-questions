@@ -24,3 +24,16 @@
     // const a =10;
     // a=100;
     // console.log(a)
+
+    // closures:
+    function x(){
+        var a =10;
+    function y(){
+         console.log(a)
+        }
+  a=100 //a is pointing to 100
+  return y;
+    }
+   var z = x();
+//    console.log(z);
+   z();
