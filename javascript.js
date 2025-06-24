@@ -79,14 +79,110 @@
 
 // functions:
 // function declaration or function statements:
-a();
-b();
-function a(){
- console.log("hi")
-}
- var b =function (){
- console.log("bye")
-}
+// a();
+// b();
+// function a(){
+//  console.log("hi")
+// }
+//  var b =function (){
+//  console.log("bye")
+// }
+
+// callback functions:passing a function as a paramter to another function
+//  passing a function as an argument to another function
+// function x(y){
+//  console.log('x')
+//  y()
+// }
+// x(function y(){
+//     console.log('y')
+
+// })
+
+// function callback(){
+//     setTimeout(function xyz(){
+//         console.log("callback")
+//     },1000)
+// }
+// callback();
+
+// setTimeout():
+
+// console.log("start");
+
+// setTimeout(()=>{
+//     console.log('callback')
+// },5000)
+
+// console.log("end")
 
 
 
+const p = new Promise(function (resolve,reject){
+  resolve("promise is resolved!!")
+
+    return p;
+})
+
+// function getData (){
+//    p.then((res)=>console.log(res))
+// }
+
+// getData();
+
+// async function getData (){
+//  const data= await p;
+//  console.log(data)
+// }
+// getData()
+// const p1 =new Promise((resolve,rejected)=>{
+//     setTimeout(()=>{
+
+//         resolve("resolved value")
+//     },10000)
+// })
+// const p2 =new Promise((resolve,rejected)=>{
+//     setTimeout(()=>{
+
+//         resolve("resolved value")
+//     },5000)
+// })
+
+
+
+
+// async function handlePromise(){
+//   const result1=await p1;
+//   console.log("hello promise")
+//   console.log(result1)
+//      const result2 =await p2;
+//   console.log("hello promise 2")
+//   console.log(result2)
+// }
+
+// handlePromise()
+
+
+// const API_URL ="https://api.github.com/user"
+
+// async function handlePromise1(){
+//     try{
+// const data=await fetch(API_URL);
+//   const jsonValue = await data.json()
+// console.log(jsonValue)
+//     }
+//     catch(err){
+//         console.log(err.message)
+//     }
+  
+// }
+
+// handlePromise1()
+
+
+const arr =[2,3,4,5,6];
+
+const arr1=arr.map((x)=>x * 2)
+const arr2 =arr.forEach((x)=>x * 2)
+
+console.log(arr1,arr2)
