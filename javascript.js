@@ -180,9 +180,66 @@ const p = new Promise(function (resolve,reject){
 // handlePromise1()
 
 
-const arr =[2,3,4,5,6];
+// const arr =[2,3,4,5,6];
 
-const arr1=arr.map((x)=>x * 2)
-const arr2 =arr.forEach((x)=>x * 2)
+// const arr1=arr.map((x)=>x * 2)
+// const arr2 =arr.forEach((x)=>x * 2)
 
-console.log(arr1,arr2)
+// console.log(arr1,arr2)
+
+
+// const arr = [1,2,3,4,5];
+
+// const result = arr.map((res)=>res + 2)
+// console.log(result)
+
+// const arr =[2,4,6,5,7];
+// const res =arr.filter((x)=>x % 2 === 0)
+// console.log(res)
+
+// const arr = [5,2,1,3,6];
+
+// const binary = arr.map((x)=>x.toString(2))
+// console.log(binary)
+
+const arr =[1,2,3,4,5]
+// function sumValue(arr){
+//     let sum =0;
+//     for(let i =0 ;i<arr.length ;i++){
+//    sum =sum + arr[i];
+// }
+// return sum;
+// }
+
+// console.log(sumValue(arr))
+
+
+// const sumValue = arr.reduce((acc,curr)=>{
+//     acc =acc + curr;
+//     return acc;
+// },0)
+
+// console.log(sumValue)
+
+// function findMax(arr){
+//     let max =0;
+
+//     for(let i =0 ;i < arr.length;i++){
+//         if(arr[i] > max)
+//         {
+//            max = arr[i]
+//         }
+//     }
+//     return max;
+// }
+
+// console.log(findMax(arr))
+
+const red =arr.reduce((acc,max)=>{
+    if(acc >max){
+        max = acc;
+    }
+    return max
+},0)
+
+console.log(red)
