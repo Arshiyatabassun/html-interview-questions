@@ -235,11 +235,39 @@ const arr =[1,2,3,4,5]
 
 // console.log(findMax(arr))
 
-const red =arr.reduce((acc,max)=>{
-    if(acc >max){
-        max = acc;
-    }
-    return max
-},0)
+// const red =arr.reduce((acc,max)=>{
+//     if(acc >max){
+//         max = acc;
+//     }
+//     return max
+// },0)
 
-console.log(red)
+// console.log(red)
+
+// let num = 123456;
+// let rev =0;
+// let lastDigit ;
+
+// while(num !=0 ){
+//     lastDigit =num %10;
+//     console.log(lastDigit)
+//     rev =rev*10 + lastDigit;
+//     num = Math.floor(num /10);
+//     console.log(num)
+
+// }
+// console.log("reverseNumber is",rev)
+
+// reverse a number with inbuild function
+
+
+// const num = 123456;
+// const rev =(num)=>parseInt(String(num).split('').reverse().join(' '));
+// console.log(reverse(num))
+
+
+// const arr1 =[1,2,3,2,3,2,3];
+// const result = [...new Set(arr1)]
+// console.log(result)
+
+
