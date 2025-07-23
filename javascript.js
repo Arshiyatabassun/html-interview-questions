@@ -271,3 +271,114 @@ const arr =[1,2,3,4,5]
 // console.log(result)
 
 
+// call method-invokes a func and pass the arguments one by one
+
+// let person ={
+//     firstName:"Arshiya",
+//     lastName:"Tabassum",
+   
+// }
+
+//   let printFullName = function (hometown,state){
+//         console.log(this.firstName + " " + this.lastName + " "+ hometown + " "+state)
+//     }
+
+//     let person1 ={
+//         firstName:"Aalim",
+//         lastName:"Mohammed",
+//     }
+//     //function borrowing
+// // printFullName.call(person)
+// printFullName.call(person1,"shimoga","karnataka")//first argument is always the reference to the this variable
+// printFullName.apply(person,["uk","karnataka"])
+// let printFullNameBind =printFullName.bind(person,"mumbai","india")//they take the copy of the function
+// printFullNameBind()
+
+
+// let name1 ={
+//     firstName:"Mohsin",
+//     lastName:"Mohammed",
+//     }
+
+//     let printFirst =function (hometown ,state){
+//         console.log(this.firstName + "," + this.lastName + "," + hometown + " " +state)
+//     }
+
+//     let printbind=printFirst.bind(name1,"mumbai")
+//     printbind("maharashta");
+
+    // Function.prototype.mybind =function (...args){
+    //     // this==>obj
+    //     let obj =this;
+    //     params =args.slice(1)//it removes the first element from the list n returns us all the elemtns
+    //     return function (...args2){
+    //         obj.apply(args[0] , [...params ,...args2])//it will concatinate both the arrays n pass to the apply method
+    //     }
+    // }
+
+    // let printbind2 =printFirst.bind(name1 ,"shimoga")
+    // printbind2("karnataka")
+
+    let person1= {
+        name:"Arshi"
+    }
+
+    let person2 ={
+        name:"Izhan"
+    }
+
+    let printPersons = function (age ,place ,food){
+        console.log(`${this.name} my ${age} birth place ${place} favourit ${food}`)
+    }
+
+    // printPersons.call(person1, 25 ,"bengaluru")
+    printPersons.apply(person1,[ 25 ,"bengaluru"])
+
+
+//     Function.prototype.mycall = function (...args){//...args ->rest parameter
+//       let obj = this;
+//       params =args.slice(1)
+//       return function (...args2){
+//       obj.call(args[0] ,[...params , ...args2]) 
+//       }
+//     }
+
+//   let printAll=  printPersons.mycall(person1 ,35)
+//   printAll()
+
+// Function.prototype.mycall =function (obj = {}, ...args){
+//     if(typeof this !== "function")
+//         throw new Error("not callable")
+// obj.fn =this;
+// obj.fn(...args);//simply calling that function
+// }
+// printPersons.mycall(person1 ,[25 ,"Bengaluru"])
+
+//apply-
+Function.prototype.myapply = function (obj ={},...args){
+    if(typeof this !== "function") throw new Error("not callable")
+    if(!Array.isArray(...args)){
+        throw new Error("not a apply method")
+    }
+ obj.fn =this;
+ obj.fn(...args)
+
+}
+printPersons.myapply(person1,23 ,"Bengalore" )
+
+
+//bind:
+
+// let printbi =printPersons.bind(person1,25);
+// printbi("shimoga")
+
+// Function.prototype.mybind =function (obj ={},...args1){
+// obj.fn = this;
+
+// return function (...args2){
+//     obj.fn(...args1 ,...args2)
+// }
+// }
+
+// let printbi =printPersons.mybind(person1, 45 ,"biryani")
+// printbi("goa")
