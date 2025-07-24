@@ -319,20 +319,20 @@ const arr =[1,2,3,4,5]
     // let printbind2 =printFirst.bind(name1 ,"shimoga")
     // printbind2("karnataka")
 
-    let person1= {
-        name:"Arshi"
-    }
+    // let person1= {
+    //     name:"Arshi"
+    // }
 
-    let person2 ={
-        name:"Izhan"
-    }
+    // let person2 ={
+    //     name:"Izhan"
+    // }
 
-    let printPersons = function (age ,place ,food){
-        console.log(`${this.name} my ${age} birth place ${place} favourit ${food}`)
-    }
+    // let printPersons = function (age ,place ,food){
+    //     console.log(`${this.name} my ${age} birth place ${place} favourit ${food}`)
+    // }
 
-    // printPersons.call(person1, 25 ,"bengaluru")
-    printPersons.apply(person1,[ 25 ,"bengaluru"])
+    // // printPersons.call(person1, 25 ,"bengaluru")
+    // printPersons.apply(person1,[ 25 ,"bengaluru"])
 
 
 //     Function.prototype.mycall = function (...args){//...args ->rest parameter
@@ -355,16 +355,16 @@ const arr =[1,2,3,4,5]
 // printPersons.mycall(person1 ,[25 ,"Bengaluru"])
 
 //apply-
-Function.prototype.myapply = function (obj ={},...args){
-    if(typeof this !== "function") throw new Error("not callable")
-    if(!Array.isArray(...args)){
-        throw new Error("not a apply method")
-    }
- obj.fn =this;
- obj.fn(...args)
+// Function.prototype.myapply = function (obj ={},...args){
+//     if(typeof this !== "function") throw new Error("not callable")
+//     if(!Array.isArray(...args)){
+//         throw new Error("not a apply method")
+//     }
+//  obj.fn =this;
+//  obj.fn(...args)
 
-}
-printPersons.myapply(person1,23 ,"Bengalore" )
+// }
+// printPersons.myapply(person1,23 ,"Bengalore" )
 
 
 //bind:
@@ -382,3 +382,79 @@ printPersons.myapply(person1,23 ,"Bengalore" )
 
 // let printbi =printPersons.mybind(person1, 45 ,"biryani")
 // printbi("goa")
+
+//map:
+const arr1 =[1,2,3,4,5]
+
+// const res =arr1.map((el)=>el * 2)
+// console.log(res)
+
+//pollyfill for map method
+//prototype property of array constructor accessible to array instances
+// Array.prototype.myMap =function (cb){
+//     const res =[];
+//     for (let i = 0; i < this.length; i++) {
+     
+//         res.push(cb(this[i]))
+//     }
+//     return res
+// }
+
+// const res =arr1.myMap((el)=>el *3);
+// console.log(res)
+
+
+//pollyfill for forEach Method
+
+// const arr2 =[1,2,3,4,5];
+// arr2.forEach((el)=>console.log(el));
+
+// Array.prototype.myforEach = function (cb){
+//     console.log("this",this)
+// for(let i= 0 ;i <arr2.length;i++){
+//     cb(this[i])
+// }
+// }
+
+// arr2.myforEach((el)=>console.log(el))
+
+
+const arr3 =[1,2,3,4,5,6,7,8]
+// const res = arr3.filter((el)=>el > 2)
+// console.log(res)
+
+// Array.prototype.myFilter =function (cb){
+//     console.log(this)
+//     const res =[];
+//     for(let i = 0 ; i <this.length ;i++){
+    
+//         if(cb(this[i])){
+//             res.push(this[i])
+//         }
+//     }
+// return res;
+// }
+
+
+// const res =arr3.myFilter((el)=>el > 3)
+// console.log(res)
+
+// const res = arr3.reduce((acc,curr)=>{
+// return acc =acc+curr;
+// },0)
+// console.log(res)
+
+Array.prototype.myReduce = function (cb,initialValue){
+  let acc = initialValue;
+      for(let i =0 ;i < this.length ; i++){
+      acc= acc ? cb(acc,(this[i]) ): this[i]
+    }
+  return acc;
+}
+
+  
+
+const res =arr3.myReduce((acc,curr)=>{
+return acc =acc+curr;
+},0)
+console.log(res)
