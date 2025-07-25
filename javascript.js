@@ -444,17 +444,37 @@ const arr3 =[1,2,3,4,5,6,7,8]
 // },0)
 // console.log(res)
 
-Array.prototype.myReduce = function (cb,initialValue){
-  let acc = initialValue;
-      for(let i =0 ;i < this.length ; i++){
-      acc= acc ? cb(acc,(this[i]) ): this[i]
-    }
-  return acc;
-}
+// Array.prototype.myReduce = function (cb,initialValue){
+//   let acc = initialValue;
+//       for(let i =0 ;i < this.length ; i++){
+//       acc= acc ? cb(acc,(this[i]) ): this[i]
+//     }
+//   return acc;
+// }
 
   
 
-const res =arr3.myReduce((acc,curr)=>{
-return acc =acc+curr;
-},0)
-console.log(res)
+// const res =arr3.myReduce((acc,curr)=>{
+// return acc =acc+curr;
+// },0)
+// console.log(res)
+
+
+//Debuncing:
+let count=0;
+function getData(){
+    //calls an API n gets the data
+    console.log("Fetching data...." ,count++)
+}
+const debounce =(fn,d)=>{
+    let timer;
+return function (){
+    let context=this;
+    args =arguments;
+    clearTimeout(timer);//stop calling the method
+   timer= setTimeout(()=>{
+        fn.apply(this,arguments)
+    },d)
+}
+}
+const betterFunction=debounce(getData,300)
